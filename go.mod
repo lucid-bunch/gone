@@ -1,4 +1,4 @@
-module github.com/cabels/gone
+module github.com/lucid-bunch/gone
 
 go 1.12
 
