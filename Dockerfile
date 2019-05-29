@@ -1,12 +1,11 @@
 FROM golang:1.12.0-alpine3.9 as builder
-WORKDIR /app
+WORKDIR /build/
 ADD . .
-RUN apk add --update git
-RUN go mod download
-RUN CGO_ENABLED=0 GOOS=linux go build -ldflags '-s -w -extldflags "-static"' -o /go/bin/app
+RUN apk add --update git && \
+    go mod download && \
+    CGO_ENABLED=0 GOOS=linux go build -ldflags '-s -w -extldflags "-static"' -o app
 
 FROM scratch
-WORKDIR /app/
 USER 1000
-COPY --from=builder /go/bin/app .
+COPY --from=builder /build/app .
 CMD ["./app"]

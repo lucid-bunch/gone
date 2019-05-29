@@ -1,12 +1,11 @@
 
-APP_NAME=gone
-IMAGE_NAME=${APP_NAME}
+NAME=gone
 GOCMD=go
 GOBUILD=$(GOCMD) build
 GOCLEAN=$(GOCMD) clean
 GOTEST=$(GOCMD) test
 GOMODDOWNLOAD=$(GOCMD) mod download
-BINARY_NAME=out/${APP_NAME}
+BINARY_NAME=out/${NAME}
 BINARY_UNIX=$(BINARY_NAME)_unix
 
 all: clean deps test build
@@ -29,8 +28,8 @@ build-linux:
 
 .PHONY: docker-build
 docker-build:
-	docker build --build-arg APP_NAME=$(APP_NAME) -t $(IMAGE_NAME) .
+	docker build -t $(NAME) .
 
 .PHONY: docker-run
 docker-run:
-	docker run --rm -it $(IMAGE_NAME)
+	docker run --rm -it $(NAME)
