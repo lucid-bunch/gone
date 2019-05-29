@@ -1,12 +1,15 @@
+
+APP_NAME=gone
+IMAGE_NAME=${APP_NAME}
 GOCMD=go
 GOBUILD=$(GOCMD) build
 GOCLEAN=$(GOCMD) clean
 GOTEST=$(GOCMD) test
-GOGET=$(GOCMD) get
-BINARY_NAME=out/gone
+GOMODDOWNLOAD=$(GOCMD) mod download
+BINARY_NAME=out/${APP_NAME}
 BINARY_UNIX=$(BINARY_NAME)_unix
 
-all: test build
+all: clean deps test build
 build: 
 	$(GOBUILD) -o $(BINARY_NAME) -v
 test: 
@@ -19,7 +22,15 @@ run:
 	$(GOBUILD) -o $(BINARY_NAME) -v ./...
 	./$(BINARY_NAME)
 deps:
-	$(GOGET) github.com/manifoldco/promptui
+	$(GOMODDOWNLOAD)
 
 build-linux:
 	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 $(GOBUILD) -o $(BINARY_UNIX) -v
+
+.PHONY: docker-build
+docker-build:
+	docker build --build-arg APP_NAME=$(APP_NAME) -t $(IMAGE_NAME) .
+
+.PHONY: docker-run
+docker-run:
+	docker run --rm -it $(IMAGE_NAME)
