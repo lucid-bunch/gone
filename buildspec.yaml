@@ -1,11 +1,6 @@
 version: 0.2
 
 phases:
-  install:
-    runtime-versions:
-      golang: 1.12
-    commands:
-      - make deps
   build:
     commands:
-      - make all
+      - make docker-build
