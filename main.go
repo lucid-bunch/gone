@@ -33,6 +33,12 @@ func newApp() *app {
 	}
 }
 
+const (
+	baseURI = "http://api.ne.se/search?q"
+	t       = "encyklopedi.lång"
+	s       = "5"
+)
+
 func main() {
 	app := newApp()
 	validate := func(input string) error {
@@ -57,9 +63,7 @@ func main() {
 }
 
 func (*app) search(client http.Client, query string) {
-	t := "encyklopedi.lång"
-	s := "5"
-	req, reqErr := http.NewRequest("GET", "http://api.ne.se/search?q="+url.QueryEscape(query)+"&src="+url.QueryEscape(t)+"&size="+s, nil)
+	req, reqErr := http.NewRequest("GET", baseURI+url.QueryEscape(query)+"&src="+url.QueryEscape(t)+"&size="+s, nil)
 	if reqErr != nil {
 		// do something
 	}
