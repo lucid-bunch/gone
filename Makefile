@@ -1,5 +1,5 @@
 
-NAME=gone
+NAME=gone-cli
 GOCMD=go
 GOBUILD=$(GOCMD) build
 GOCLEAN=$(GOCMD) clean
