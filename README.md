@@ -1,8 +1,8 @@
-# gone
+# GoNE CLI
 
-![Build Status](https://codebuild.eu-west-2.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoia3NSMXVoOHRTamtXbmZJUFZCaElGWEQ2dVhON0FXOWVKZi9qMW5vRjFYd3BXUTVqd3pCRXZWS0c0SE83UHNzMExFTncxTG9UazM2cE5WaHJHSDVkZUpVPSIsIml2UGFyYW1ldGVyU3BlYyI6ImVaTG1lbmxuOUp2amlOWTEiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master) [![codebeat badge](https://codebeat.co/badges/1acc3a3f-9e64-4dfc-a1ef-1378960f9fee)](https://codebeat.co/projects/github-com-lucid-bunch-gone-master)
+![Build Status](https://codebuild.eu-west-2.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoid2FFeXVGT3g0UHRiZDJhSWdjd2F6eXJodG14OGo1bXBBaTFsc1BNU0VyT3hzR2ptNDNETDQ3ZFZRRGJxb0NsQ0I5bVphUUwvenNkc2IzNE9FSlY5dzBnPSIsIml2UGFyYW1ldGVyU3BlYyI6InAxTWMxTXQxaGpmSloxS2giLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master) [![codebeat badge](https://codebeat.co/badges/b4150150-64f9-4946-b8a5-7e7cb2923031)](https://codebeat.co/projects/github-com-cabels-gone-cli-master)
 
-Go NE. Application written in Go that allows you to search the national encyclopedia (SE).
+GoNE CLI. Application that allows you to search the national encyclopedia (SE).
 
 ## Setup
 

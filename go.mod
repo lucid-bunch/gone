@@ -1,4 +1,4 @@
-module github.com/lucid-bunch/gone
+module github.com/lucid-bunch/gone-cli
 
 go 1.12
 
